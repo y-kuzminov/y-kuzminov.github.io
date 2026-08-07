@@ -1,7 +1,14 @@
 # API Autotests
 
-pytest + requests against a public REST API (e.g. jsonplaceholder.typicode.com).
+pytest + requests against a public REST API (jsonplaceholder.typicode.com / reqres.in).
 
-**Covered:** GET (list / single), POST (create), 404 handling, nested resources.
+**Covered:**
+- GET (list / single resource)
+- POST (create)
+- 404 handling
+- Nested resources
+- Basic assertions on status code and response body
 
-Run: `pytest tests/api -v`
+**Run:**
+```bash
+pytest tests/api -v
