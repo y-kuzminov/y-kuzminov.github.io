@@ -2,9 +2,13 @@
 
 pytest + Playwright with Page Object Model against saucedemo.com.
 
-**Covered:** successful login, locked-out user error, add product to cart.
+**Covered:**
+- Successful login
+- Locked-out user error
+- Add product to cart
 
-Run:
-    pip install -r ../../requirements.txt
-    playwright install
-    pytest tests/ui -v
+**Run:**
+```bash
+pip install -r ../../requirements.txt
+playwright install
+pytest tests/ui -v
