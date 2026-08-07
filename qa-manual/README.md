@@ -1,6 +1,6 @@
 # Manual QA
 
-Hands-on manual testing artifacts.
+Hands-on manual testing artifacts created during practice and freelance testing.
 
 | # | Project | What's inside |
 |---|---------|---------------|
@@ -8,5 +8,4 @@ Hands-on manual testing artifacts.
 | 02 | [Mobile game (Diamond City)](./02-game-diamond-city) | GDD review, test cases, bug reports, core-loop & STLC approach |
 | 03 | [API testing (Postman)](./03-api-postman) | Postman collection + tests, Newman run |
 
-**Approach:** requirements analysis → test design (positive / negative / boundary) →
-execution → defect reporting with full structure → closure.
+**Approach:** Requirements analysis → Test design (positive / negative / boundary) → Execution → Defect reporting with full structure → Closure.
