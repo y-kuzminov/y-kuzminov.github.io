@@ -1,14 +1,17 @@
 # Web e-commerce — Manual Testing
 
-**Object under test:** automationexercise.com (public demo e-commerce).
-**Scope:** registration, login (positive/negative), product search, cart, checkout.
-**Environment:** Chrome / Windows 11.
+**Object under test:** automationexercise.com (public demo e-commerce)  
+**Scope:** Registration, Login (positive/negative), Product search, Cart, Checkout  
+**Environment:** Chrome / Windows 11
 
-## Artifacts
+### Why this project
+I have 6+ years of real e-commerce operations experience. This project demonstrates how I approach testing of core e-commerce user flows.
+
+### Artifacts
 - [Test plan](./test-plan.md)
-- [Test cases](./test-cases.md) — 15+ cases, expected result per step
-- [Smoke checklist](./checklist.md) — blocks + status + negative/boundary checks
+- [Test cases](./test-cases.md) — 15+ cases with expected results
+- [Smoke checklist](./checklist.md)
 - [Bug reports](./bug-reports) — 5 reports with full structure + screenshots
 
-## Test design techniques used
-Equivalence partitioning, boundary value analysis, negative testing.
+### Test design techniques used
+Equivalence partitioning, Boundary value analysis, Negative testing.
