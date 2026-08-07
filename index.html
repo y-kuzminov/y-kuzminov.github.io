@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yuriy Kuzminov — QA Engineer Portfolio</title>
+  <title>Yurii Kuzminov — QA Engineer Portfolio</title>
   <style>
     :root{--bg:#0d1117;--card:#161b22;--bd:#30363d;--tx:#e6edf3;--mut:#8b949e;--ac:#3b82f6;}
     *{box-sizing:border-box;margin:0;padding:0}
@@ -26,27 +26,36 @@
     .tags{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
     .tag{background:#1f2937;color:#9ca3af;font-size:12px;padding:3px 8px;border-radius:6px}
     .about{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:20px;color:var(--mut)}
+    .about strong{color:var(--tx)}
     footer{margin-top:40px;color:var(--mut);font-size:13px;text-align:center;border-top:1px solid var(--bd);padding-top:20px}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <h1>Yuriy Kuzminov</h1>
+      <h1>Yurii Kuzminov</h1>
       <div class="role">Junior QA Engineer</div>
       <div class="sub">Kharkiv, Ukraine · open to remote</div>
       <div class="contacts">
-        <a href="mailto:kuzminov.yuriy@gmail.com">✉ Email</a>
+        <a href="mailto:kuzminov.yuryi@gmail.com">✉ Email</a>
         <a href="https://www.linkedin.com/in/y-kuzminov/" target="_blank">in LinkedIn</a>
         <a href="https://github.com/y-kuzminov" target="_blank">⌥ GitHub</a>
       </div>
     </header>
 
     <div class="about">
-      QA Engineer (Manual) with ~1 year of experience. I write test documentation
-      (test cases, checklists, bug reports), test web & mobile apps, work with API
-      (Postman/REST) and SQL, and I'm learning automation with Python (pytest/Selenium).
-      Below — my hands-on portfolio.
+      Junior QA Engineer with a Master’s degree in Computer Engineering.<br><br>
+      I have hands-on experience in exploratory and functional testing of web & mobile applications, 
+      writing clear test documentation (test cases, checklists, bug reports), API testing (Postman), and SQL.<br><br>
+      Strong practical background in <strong>e-commerce</strong> (6 years of full-cycle operations) and <strong>FinTech</strong> support.<br><br>
+      Currently focusing on:
+      <ul style="margin:8px 0 0 18px">
+        <li>Test automation with <strong>Python + Playwright</strong></li>
+        <li>CI/CD (<strong>GitHub Actions</strong>)</li>
+        <li>AI-assisted testing workflows</li>
+      </ul>
+      <br>
+      Open to Junior / General QA roles (remote / hybrid).
     </div>
 
     <h2>🧪 Manual QA</h2>
@@ -54,17 +63,29 @@
       <a class="card" href="https://github.com/y-kuzminov/y-kuzminov.github.io/tree/main/qa-manual/01-web-ecommerce" target="_blank">
         <h3>Web e-commerce testing</h3>
         <p>Test plan, 15+ test cases, smoke checklist and bug reports for a web shop.</p>
-        <div class="tags"><span class="tag">Test cases</span><span class="tag">Checklist</span><span class="tag">Bug reports</span></div>
+        <div class="tags">
+          <span class="tag">Test cases</span>
+          <span class="tag">Checklist</span>
+          <span class="tag">Bug reports</span>
+        </div>
       </a>
       <a class="card" href="https://github.com/y-kuzminov/y-kuzminov.github.io/tree/main/qa-manual/02-game-diamond-city" target="_blank">
         <h3>Mobile game testing</h3>
         <p>GDD review, test cases, bug reports and core-loop analysis (with STLC approach).</p>
-        <div class="tags"><span class="tag">Mobile</span><span class="tag">GDD</span><span class="tag">STLC</span></div>
+        <div class="tags">
+          <span class="tag">Mobile</span>
+          <span class="tag">GDD</span>
+          <span class="tag">STLC</span>
+        </div>
       </a>
       <a class="card" href="https://github.com/y-kuzminov/y-kuzminov.github.io/tree/main/qa-manual/03-api-postman" target="_blank">
         <h3>API testing (Postman)</h3>
         <p>Postman collection with CRUD requests and tests; runnable via Newman.</p>
-        <div class="tags"><span class="tag">API</span><span class="tag">Postman</span><span class="tag">REST</span></div>
+        <div class="tags">
+          <span class="tag">API</span>
+          <span class="tag">Postman</span>
+          <span class="tag">REST</span>
+        </div>
       </a>
     </div>
 
@@ -73,22 +94,33 @@
       <a class="card" href="https://github.com/y-kuzminov/y-kuzminov.github.io/tree/main/qa-automation/tests/api" target="_blank">
         <h3>API autotests — Python</h3>
         <p>pytest + requests tests against a public REST API.</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">pytest</span><span class="tag">requests</span></div>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">pytest</span>
+          <span class="tag">requests</span>
+        </div>
       </a>
       <a class="card" href="https://github.com/y-kuzminov/y-kuzminov.github.io/tree/main/qa-automation/tests/ui" target="_blank">
-        <h3>UI autotests — Selenium</h3>
-        <p>pytest + Selenium with Page Object Model.</p>
-        <div class="tags"><span class="tag">Selenium</span><span class="tag">POM</span></div>
+        <h3>UI autotests — Playwright</h3>
+        <p>pytest + Playwright with Page Object Model.</p>
+        <div class="tags">
+          <span class="tag">Playwright</span>
+          <span class="tag">POM</span>
+          <span class="tag">pytest</span>
+        </div>
       </a>
-      <a class="card" href="https://github.com/y-kuzminov/y-kuzminov.github.io/blob/main/qa-automation/azure-pipelines.yml" target="_blank">
-        <h3>CI — Azure DevOps</h3>
+      <a class="card" href="https://github.com/y-kuzminov/y-kuzminov.github.io/tree/main/qa-automation" target="_blank">
+        <h3>CI — GitHub Actions</h3>
         <p>Pipeline that runs the autotests on every push.</p>
-        <div class="tags"><span class="tag">Azure Pipelines</span><span class="tag">CI/CD</span></div>
+        <div class="tags">
+          <span class="tag">GitHub Actions</span>
+          <span class="tag">CI/CD</span>
+        </div>
       </a>
     </div>
 
     <footer>
-      Built with GitHub Pages · kuzminov.yuriy@gmail.com
+      Built with GitHub Pages · kuzminov.yuryi@gmail.com
     </footer>
   </div>
 </body>
