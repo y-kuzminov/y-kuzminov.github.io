@@ -10,6 +10,7 @@ Bug reports found during manual testing of a mobile idle / city-builder game (de
 **Environment:** Android device  
 **Preconditions:** Helicopter event is active  
 **Related Test Case:** TC_15  
+**Reproducibility:** High (reproduced consistently)
 
 **Steps to Reproduce:**
 1. Wait for the helicopter to appear in the game
@@ -30,6 +31,7 @@ Only Soft currency is shown (reproduced multiple times).
 **Environment:** Android device  
 **Preconditions:** Player has enough currency to upgrade a cash desk  
 **Related Test Case:** TC_16  
+**Reproducibility:** High
 
 **Steps to Reproduce:**
 1. Note the current currency balance
@@ -50,6 +52,7 @@ Currency is deducted from the player balance after the upgrade.
 **Environment:** Android device  
 **Preconditions:** Game is running  
 **Related Test Case:** TC_17  
+**Reproducibility:** High
 
 **Steps to Reproduce:**
 1. Record the time of one train arrival
@@ -70,6 +73,7 @@ Train arrives approximately every 45 seconds.
 **Environment:** Android device  
 **Preconditions:** Player can build cash desks  
 **Related Test Case:** TC_18  
+**Reproducibility:** High
 
 **Steps to Reproduce:**
 1. Build cash desks until the limit is reached
@@ -91,6 +95,7 @@ Only 8 cash desks can be built.
 **Environment:** Android device  
 **Preconditions:** Player has enough hard currency  
 **Related Test Case:** TC_19  
+**Reproducibility:** High
 
 **Steps to Reproduce:**
 1. Open the income multiplier offer
@@ -113,6 +118,7 @@ Income is multiplied by 3× for 20 hard currency.
 **Environment:** Android device  
 **Preconditions:** Game is running and statistics screen is available  
 **Related Test Case:** TC_20  
+**Reproducibility:** High
 
 **Steps to Reproduce:**
 1. Open the statistics screen for buildings
