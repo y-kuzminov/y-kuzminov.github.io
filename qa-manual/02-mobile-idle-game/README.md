@@ -28,3 +28,6 @@ Test assignment for a mobile idle / city-builder game (details anonymized).
 ### Environment
 - Platform: Android
 - Testing type: Manual + Exploratory
+  
+### Notes
+All game-specific names and assets have been anonymized.
