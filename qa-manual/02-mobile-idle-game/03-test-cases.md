@@ -42,8 +42,9 @@ Available slots are filled first. Extra cars wait in the queue.
 1. Wait several seconds
 2. Check currency balance
 
-**Expected Result:**  
-Income is added according to the number of occupied slots.
+**Expected Result:
+- Currency balance increases over time
+- Income amount corresponds to the number of occupied parking slots
 
 ---
 
@@ -157,8 +158,10 @@ A new cash desk appears in the game.
 2. Wait for the next train
 3. Observe NPCs and income
 
-**Expected Result:**  
-Train arrives after the defined interval and brings NPCs that can generate income.
+Expected Result:
+- Train arrives after the defined interval
+- NPCs appear from the train
+- NPCs can generate income after reaching cash desks
 
 ---
 
