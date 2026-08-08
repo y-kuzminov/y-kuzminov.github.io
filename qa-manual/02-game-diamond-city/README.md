@@ -1,4 +1,4 @@
-# Mobile Game — Diamond City (Test Task)
+# Mobile Idle Game Testing
 
 A real test task: I tested an idle/tycoon mobile game and received a detailed
 review from the team lead. This folder shows the **corrected version** with the
