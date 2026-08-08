@@ -1,4 +1,4 @@
-# Mobile Idle Game Testing
+# Mobile Idle Game — Manual Testing
 
 A real test task: I tested an idle/tycoon mobile game and received a detailed
 review from the team lead. This folder shows the **corrected version** with the
