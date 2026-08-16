@@ -1,0 +1,479 @@
+{
+	"info": {
+		"_postman_id": "9073ef4d-94e5-4bb7-873f-20da4e5eeed8",
+		"name": "Yuriy.K_HW_24.1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34865088"
+	},
+	"item": [
+		{
+			"name": "Positive case 4 symbols -singup",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomEmail = \"name\" + Math.floor(Math.random() * 1000000) + \"@gmail.com\";",
+							"pm.environment.set('email', randomEmail);",
+							"",
+							"function generateRandomName(length) {",
+							"    var letters = 'abcdefghijklmnopqrstuvwxyz';",
+							"    var randomName = Array.from({ length: length }, () => letters.charAt(Math.floor(Math.random() * letters.length))).join('');",
+							"    return randomName.charAt(0).toUpperCase() + randomName.slice(1);",
+							"}",
+							"",
+							"var randomName = generateRandomName(4); ",
+							"pm.environment.set('name', randomName);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"{{name}}\",\n  \"lastName\": \"Test\",\n  \"email\": \"{{email}}\",\n  \"password\": \"Qwerty1!\",\n  \"repeatPassword\": \"Qwerty1!\"\n}"
+				},
+				"url": {
+					"raw": "{{Base_URL}}/auth/signup",
+					"host": [
+						"{{Base_URL}}"
+					],
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit user",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"function generateRandomName(length) {",
+							"    var letters = 'abcdefghijklmnopqrstuvwxyz';",
+							"    var randomName = Array.from({ length: length }, () => letters.charAt(Math.floor(Math.random() * letters.length))).join('');",
+							"    return randomName.charAt(0).toUpperCase() + randomName.slice(1);",
+							"}",
+							"",
+							"var randomName = generateRandomName(4); ",
+							"pm.environment.set('name', randomName);",
+							"",
+							"",
+							"function generateRandomLastName(length) {",
+							"    var letters = 'abcdefghijklmnopqrstuvwxyz';",
+							"    var randomLastName = Array.from({ length: length }, () => letters.charAt(Math.floor(Math.random() * letters.length))).join('');",
+							"    return randomLastName.charAt(0).toUpperCase() + randomLastName.slice(1);",
+							"}",
+							"",
+							"var randomLastName = generateRandomLastName(4);",
+							"pm.environment.set('lastName', randomLastName);",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"userId\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"photo\": \"user-1621352948859.jpg\",\n  \"name\": \"{{name}}\",\n  \"lastName\": \"{{lastName}}\",\n  \"dateBirth\": \"2021-03-17T15:21:05.000Z\",\n  \"country\": \"Ukraine\"\n}"
+				},
+				"url": {
+					"raw": "{{Base_URL}}/users/profile",
+					"host": [
+						"{{Base_URL}}"
+					],
+					"path": [
+						"users",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "change distance to ml",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var responseJson = JSON.parse(responseBody);",
+							"pm.test(\"Значення параметра 'status' є 'ok'\", function () {",
+							"    pm.expect(responseJson.status).to.equal('ok');",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"distanceUnits\": \"ml\"\n}"
+				},
+				"url": {
+					"raw": "{{Base_URL}}/users/settings",
+					"host": [
+						"{{Base_URL}}"
+					],
+					"path": [
+						"users",
+						"settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a new car",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Парсимо відповідь JSON",
+							"var responseJson = JSON.parse(responseBody);",
+							"",
+							"// Зберігаємо значення параметру id в змінну середовища",
+							"pm.environment.set(\"carId\", responseJson.data.id);",
+							"",
+							"// Перевірка значення параметру \"status\"",
+							"pm.test(\"Значення параметра 'status' є 'ok'\", function () {",
+							"    pm.expect(responseJson.status).to.equal('ok');",
+							"});",
+							"// Перевірка наявності параметру \"id\" в об'єкті \"data\"",
+							"pm.test(\"Перевірка наявності параметру 'id'\", function () {",
+							"    pm.expect(responseJson.data).to.have.property('id');",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"carBrandId\": 1,\n  \"carModelId\": 2,\n  \"mileage\": 102\n}"
+				},
+				"url": {
+					"raw": "{{Base_URL}}/cars",
+					"host": [
+						"{{Base_URL}}"
+					],
+					"path": [
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change mileage",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"carBrandId\": 1,\n  \"carModelId\": 2,\n  \"mileage\": 168223\n}"
+				},
+				"url": {
+					"raw": "{{Base_URL}}/cars/{{carId}}",
+					"host": [
+						"{{Base_URL}}"
+					],
+					"path": [
+						"cars",
+						"{{carId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add costs",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Отримуємо поточну дату та час",
+							"var currentDate = new Date();",
+							"",
+							"// Форматуємо дату у відповідному форматі для вашого запиту",
+							"var formattedDate = currentDate.toISOString();",
+							"",
+							"// Встановлюємо сформовану дату у поточий запит",
+							"pm.variables.set(\"currentDate\", formattedDate);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"carId\": {{carId}},\n  \"reportedAt\": \"{{currentDate}}\",\n  \"mileage\": 123,\n  \"liters\": 11,\n  \"totalCost\": 11,\n  \"forceMileage\": false\n}"
+				},
+				"url": {
+					"raw": "{{Base_URL}}/expenses",
+					"host": [
+						"{{Base_URL}}"
+					],
+					"path": [
+						"expenses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete car",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{Base_URL}}/cars/{{carId}}",
+					"host": [
+						"{{Base_URL}}"
+					],
+					"path": [
+						"cars",
+						"{{carId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{Base_URL}}/users",
+					"host": [
+						"{{Base_URL}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Base_URL",
+			"value": "https://qauto.forstudy.space/api"
+		}
+	]
+}
