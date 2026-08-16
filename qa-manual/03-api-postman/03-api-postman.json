@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "Positive case 4 symbols -singup",
+			"name": "Sign up",
 			"event": [
 				{
 					"listen": "prerequest",
